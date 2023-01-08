@@ -34,6 +34,7 @@ public class CharacterAnimations : MonoBehaviour
     void Update()
     {
         anim.SetFloat("MoveSpeed", move.NormalizedMoveSpeed);
+        anim.SetFloat("VerticalSpeed", jump.VerticalVelocity);
 
         if (move.NormalizedMoveSpeed > 0.1f)
             targetDirection = move.MoveDirection;
@@ -72,6 +73,7 @@ public class CharacterAnimations : MonoBehaviour
     void OnJump()
     {
         anim.SetTrigger("Jump");
+        anim.SetFloat("VerticalSpeed", jump.VerticalVelocity);
     }
 
     void OnKill()

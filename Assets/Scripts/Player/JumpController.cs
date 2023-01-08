@@ -34,6 +34,7 @@ public class JumpController : MonoBehaviour
     Rigidbody body;
     GroundCaster ground;
     CustomGravity gravity;
+    CompositeStateToken freezeGroundDetectionToken = new CompositeStateToken();
 
     [Header("Inputs")]
     protected InputMap inputs;
@@ -56,6 +57,7 @@ public class JumpController : MonoBehaviour
         ground = GetComponentInChildren<GroundCaster>();
         gravity = GetComponent<CustomGravity>();
         ground.onGroundedStateChanged.AddListener(OnGroundedStateChanged);
+        PlayerState.Instance.freezeGroundDetectionState.Add(freezeGroundDetectionToken);
     }
 
     void OnEnable()
@@ -210,7 +212,15 @@ public class JumpController : MonoBehaviour
         //Audio
         SFXManager.PlaySound(GlobalSFX.Jump);
 
+        freezeGroundDetectionToken.SetOn(true);
+        Invoke("AllowGroundDetection",0.25f);
+
         onJump.Invoke();
+    }
+
+    void AllowGroundDetection()
+    {
+        freezeGroundDetectionToken.SetOn(false);
     }
 
     private void OnGroundedStateChanged(bool isGrounded)

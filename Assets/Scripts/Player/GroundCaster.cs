@@ -18,6 +18,7 @@ public class GroundCaster : MonoBehaviour
     public class GroundedEvent : UnityEvent<bool> { }
     public GroundedEvent onGroundedStateChanged = new GroundedEvent();
 
+    public Vector3 groundPosition;
     public bool isGrounded { get; private set; }
 
     private void Awake()
@@ -44,10 +45,37 @@ public class GroundCaster : MonoBehaviour
         }
         else
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, castDistance, groundLayers))
-            //if(Physics.BoxCast(transform.position, Vector3.one * castRadius, Vector3.down,out RaycastHit hit,Quaternion.identity, castDistance, groundLayers))
+            bool forward = Physics.Raycast(transform.position + transform.forward * castRadius, Vector3.down, out RaycastHit hitF,castDistance, groundLayers);
+            bool left = Physics.Raycast(transform.position - transform.right * castRadius, Vector3.down, out RaycastHit hitL,castDistance, groundLayers);
+            bool right = Physics.Raycast(transform.position + transform.right * castRadius, Vector3.down, out RaycastHit hitR,castDistance, groundLayers);
+            bool back = Physics.Raycast(transform.position - transform.forward * castRadius, Vector3.down, out RaycastHit hitB,castDistance, groundLayers);
+            if (forward || left || right || back)
             {
                 isGrounded = true;
+
+                groundPosition = Vector3.zero;
+                int hitCount = 0;
+                if (hitF.collider != null)
+                {
+                    groundPosition += hitF.point;
+                    hitCount++;
+                }
+                if (hitL.collider != null)
+                {
+                    groundPosition += hitL.point;
+                    hitCount++;
+                }
+                if (hitR.collider != null)
+                {
+                    groundPosition += hitR.point;
+                    hitCount++;
+                }
+                if (hitB.collider != null)
+                {
+                    groundPosition += hitB.point;
+                    hitCount++;
+                }
+                groundPosition /= hitCount;
             }
             else
                 isGrounded = false;
@@ -64,9 +92,28 @@ public class GroundCaster : MonoBehaviour
         lastGroundedState = isGrounded;
     }
 
+    void SnapToGround()
+    {
+        if (!isGrounded)
+            return;
+        //Snap to ground
+        Vector3 bodyPosition = body.transform.position;
+        bodyPosition.y = groundPosition.y;
+        body.transform.position = bodyPosition;
+        Vector3 velocity= body.velocity;
+        velocity.y = 0;
+        body.velocity = velocity;
+    }
+
+    private void Update()
+    {
+        SnapToGround();
+    }
+
     private void FixedUpdate()
     {
         CastGround();
+        SnapToGround();
     }
 
     private void OnDrawGizmosSelected()
@@ -75,8 +122,7 @@ public class GroundCaster : MonoBehaviour
             Gizmos.color = Color.green;
         else
             Gizmos.color = Color.blue;
-        Vector3 castTargetPos = transform.position + Vector3.down * castDistance;
-        Gizmos.DrawLine(transform.position, castTargetPos);
-        Gizmos.DrawWireCube(castTargetPos, Vector3.one * castRadius);
+        Gizmos.DrawRay(transform.position, Vector3.down * castDistance);
+        Gizmos.DrawWireSphere(transform.position+ Vector3.down * castDistance, castRadius);
     }
 }
