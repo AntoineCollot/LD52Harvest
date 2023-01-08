@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class JumpController : MonoBehaviour
@@ -23,6 +24,7 @@ public class JumpController : MonoBehaviour
     float jumpBufferCounter01;
     float jumpSpeed;
     float gravityScale;
+    public UnityEvent onJump = new UnityEvent();
 
     //Snap to full jump
     float lastPressJumpTime;
@@ -207,6 +209,8 @@ public class JumpController : MonoBehaviour
 
         //Audio
         SFXManager.PlaySound(GlobalSFX.Jump);
+
+        onJump.Invoke();
     }
 
     private void OnGroundedStateChanged(bool isGrounded)

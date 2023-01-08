@@ -36,6 +36,15 @@ public class MovementController : MonoBehaviour
     protected InputMap inputs;
 
     public bool IsGrounded => ground.isGrounded;
+    public float NormalizedMoveSpeed
+    {
+        get
+        {
+            Vector2 velocity = new Vector2(body.velocity.x, body.velocity.z);
+            return velocity.magnitude / maxSpeed;
+        }
+    }
+    public Vector3 MoveDirection => new Vector3(desiredVelocity.x,0, desiredVelocity.y).normalized;
 
     void Awake()
     {
