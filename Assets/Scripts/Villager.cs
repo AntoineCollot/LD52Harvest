@@ -138,6 +138,7 @@ public class Villager : MonoBehaviour
     void KillAnimDelayed()
     {
         anim.SetBool("IsDead", true);
+        GetComponentInChildren<SkinnedMeshRenderer>().gameObject.layer = 0;
     }
 
     public static string[] Names = new string[]

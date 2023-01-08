@@ -53,7 +53,6 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e90159a5789bbfa48ad33db650e9746c, type: 2}
-  - {fileID: 2100000, guid: e90159a5789bbfa48ad33db650e9746c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -708,7 +707,7 @@ MonoBehaviour:
   m_text: Ted
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2770a446718b97f4489cfe8438df0f3b, type: 2}
-  m_sharedMaterial: {fileID: -1869999727397868935, guid: 50bc2fe91ebc6524884b11dac5fbd753,
+  m_sharedMaterial: {fileID: 7167480726941421308, guid: 2770a446718b97f4489cfe8438df0f3b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

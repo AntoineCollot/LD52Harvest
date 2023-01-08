@@ -8,6 +8,9 @@ public class TutoTomb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (content.activeSelf)
+            return;
+
         content.SetActive(true);
         SFXManager.PlaySound(GlobalSFX.GhostApparition);
     }

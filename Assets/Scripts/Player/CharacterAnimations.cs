@@ -11,7 +11,7 @@ public class CharacterAnimations : MonoBehaviour
     public Transform armature;
     Animator anim;
 
-    Vector3 currentDirection = Vector3.forward;
+    public Vector3 currentDirection = Vector3.forward;
     Vector3 targetDirection;
     public float rotationSpeed = 360;
 
@@ -20,6 +20,7 @@ public class CharacterAnimations : MonoBehaviour
         jump = GetComponentInParent<JumpController>();
         move = GetComponentInParent<MovementController>();
         anim = GetComponent<Animator>();
+        currentDirection.Normalize();
     }
 
     // Start is called before the first frame update

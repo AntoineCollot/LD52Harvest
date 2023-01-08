@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public bool gameIsOver { get; private set; }
     public bool gameHasStarted { get; private set; }
     public bool GameIsPlaying => !gameIsOver && gameHasStarted;
+    public bool autoStart = true;
 
     public UnityEvent onGameStart = new UnityEvent();
     public UnityEvent onGameOver = new UnityEvent();
@@ -17,7 +18,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        StartGame();
+        if(autoStart)
+            StartGame();
     }
 
     public void StartGame()

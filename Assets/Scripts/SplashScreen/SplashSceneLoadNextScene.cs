@@ -24,7 +24,7 @@ public class SplashSceneLoadNextScene : MonoBehaviour
         SceneManager.LoadScene(1,LoadSceneMode.Additive);
 
         float t = 0;
-        while(t<1)
+        while (t < 1)
         {
             t += Time.deltaTime / fadeTime;
 
