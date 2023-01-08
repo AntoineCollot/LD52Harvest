@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 69d6207bbddcb924baebb3aac75868c8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Candela
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f04518dbf0220124cbe68fed35bb1c69, type: 3}
+  - {fileID: 12800000, guid: 1ed250e3d3542b848a6241d093d2d5f5, type: 3}
+  - {fileID: 12800000, guid: 9609b0a6c0960e64bb65c51eb3a79402, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
