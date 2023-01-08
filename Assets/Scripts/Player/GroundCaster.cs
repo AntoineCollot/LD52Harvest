@@ -94,7 +94,7 @@ public class GroundCaster : MonoBehaviour
 
     void SnapToGround()
     {
-        if (!isGrounded)
+        if (!isGrounded || PlayerState.Instance.freezeGroundDetectionState.IsOn)
             return;
         //Snap to ground
         Vector3 bodyPosition = body.transform.position;

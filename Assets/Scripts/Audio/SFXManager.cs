@@ -7,26 +7,16 @@ using UnityEditor;
 
 public enum GlobalSFX
 {
-    DoorBeforePin,
-    CheckpointOpen,
-    HookKey,
-    EnterHook,
-    PickUpKey,
+    VillagerKilled,
     Jump,
     Land,
-    Respawn,
-    BounceMushroom,
-    Death,
-    Secret,
-    USBTeleporter,
-    TextPanelApparition,
-    DoorAfterPin,
-    UIHighlight,
-    UIClick,
-    DoorPin1,
-    DoorPin2,
-    DoorPin3,
-    DoorRefuseEntry,
+    Attack,
+    Star,
+    ButtonHover,
+    ButtonClick,
+    VillagerDeathOldAge,
+    VillagerMaxPoints,
+    GhostApparition,
 }
 public class SFXManager : MonoBehaviour
 {

@@ -230,6 +230,7 @@ public class JumpController : MonoBehaviour
         {
             isJumping = false;
             snapFullJump = false;
+            SFXManager.PlaySound(GlobalSFX.Land);
         }
     }
 }

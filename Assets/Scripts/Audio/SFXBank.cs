@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "NewSFXBank", menuName = "Key/SFXBank", order = 1)]
+[CreateAssetMenu(fileName = "NewSFXBank", menuName = "SFXBank", order = 1)]
 public class SFXBank : ScriptableObject
 {
     [HideInInspector]

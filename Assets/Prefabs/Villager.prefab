@@ -707,7 +707,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ted
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 50bc2fe91ebc6524884b11dac5fbd753, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2770a446718b97f4489cfe8438df0f3b, type: 2}
   m_sharedMaterial: {fileID: -1869999727397868935, guid: 50bc2fe91ebc6524884b11dac5fbd753,
     type: 2}
   m_fontSharedMaterials: []
@@ -1335,6 +1335,7 @@ MonoBehaviour:
   skullHighlight: {fileID: 8486172660083618953}
   lifetimeCycleOffset: 0
   lifetimeCycleLength: 10
+  cycleCount: 1
 --- !u!114 &8486172659836039228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,7 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spline: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 1.5
   groundLayers:
     serializedVersion: 2
     m_Bits: 64

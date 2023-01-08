@@ -9,6 +9,9 @@ public class PlayerUnderneathGizmos : MonoBehaviour
     public Transform gizmos;
     public float minDistance;
 
+    float height;
+    float refHeight;
+
     float maxAlpha;
     const float SMOOTH_ALPHA = 0.075f;
     float refAlpha;
@@ -39,7 +42,11 @@ public class PlayerUnderneathGizmos : MonoBehaviour
             Color c = sprite.color;
             c.a = alpha * maxAlpha;
             sprite.color = c;
-            gizmos.position = hit.point;
+
+
+            //pos
+            height = Mathf.SmoothDamp(height, hit.point.y, ref refHeight, SMOOTH_ALPHA);
+            gizmos.position = new Vector3(hit.point.x, height, hit.point.z);
         }
     }
 }

@@ -79,7 +79,7 @@ public class MovementController : MonoBehaviour
     {
         Vector2 currentDirectionInput = directionInput;
         //Check if we should freeze the inputs
-        if (PlayerState.Instance.freezeInputsState.IsOn)
+        if (PlayerState.Instance.freezeInputsState.IsOn || !GameManager.Instance.GameIsPlaying)
         {
             currentDirectionInput = Vector2.zero;
         }
