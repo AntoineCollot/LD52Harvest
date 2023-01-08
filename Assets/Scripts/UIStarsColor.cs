@@ -26,7 +26,7 @@ public class UIStarsColor : MonoBehaviour
             stars[i].transform.localScale = Vector3.zero;
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.5f);
 
         for (int i = 0; i < stars.Length; i++)
         {

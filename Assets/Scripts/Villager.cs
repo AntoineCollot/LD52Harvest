@@ -116,7 +116,7 @@ public class Villager : MonoBehaviour
         KillManager.Instance.OnDieFromOldAge();
 
         SFXManager.PlaySound(GlobalSFX.VillagerDeathOldAge);
-
+        GetComponentInChildren<SkinnedMeshRenderer>().gameObject.layer = 0;
         anim.SetBool("IsDead", true);
     }
 

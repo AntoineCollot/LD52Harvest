@@ -130,6 +130,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4179342493263756336, guid: 2d34e92110bcfa24fa7768abe0d070c9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1754867301421449666}
+    - target: {fileID: 4179342493263756336, guid: 2d34e92110bcfa24fa7768abe0d070c9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
     - target: {fileID: 5486613995996799938, guid: 2d34e92110bcfa24fa7768abe0d070c9,
         type: 3}
       propertyPath: m_Name
@@ -9230,6 +9240,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6e02b58fc95d04eb341aae58de48f5, type: 3}
+--- !u!114 &1754867301421449666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1754867300381456143, guid: dd6e02b58fc95d04eb341aae58de48f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1754867301421449665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0394cf8f361cc164dbba61b0d693c69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877968606575201476
 GameObject:
   m_ObjectHideFlags: 0
